@@ -128,3 +128,6 @@ The frontend dynamically maps [Open-Meteo Weather Codes](https://open-meteo.com/
 - **71 - 77, 85, 86**: ❄️ Snowfall / Snow Showers
 - **80, 81, 82**: 🌦️ Rain Showers
 - **95, 96, 99**: ⛈️ Thunderstorms
+
+## Output
+<img width="1908" height="967" alt="Image" src="https://github.com/user-attachments/assets/6a5322e9-3047-44bf-ba2f-b068b61e9dc3" />
