@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbus - Premium Weather Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-decor blob-1"></div>
+    <div class="background-decor blob-2"></div>
+    
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">☁️</span>
+                <h1>Nimbus</h1>
+            </div>
+            <p class="subtitle">Real-time Global Weather Intelligence</p>
+        </header>
+
+        <main class="app-content">
+            <!-- Control Card (Inputs) -->
+            <section class="card control-card">
+                <h2>Query Location</h2>
+                <div class="presets">
+                    <button class="btn btn-preset active" data-lat="28.6139" data-lon="77.2090">New Delhi</button>
+                    <button class="btn btn-preset" data-lat="40.7128" data-lon="-74.0060">New York</button>
+                    <button class="btn btn-preset" data-lat="51.5074" data-lon="-0.1278">London</button>
+                    <button class="btn btn-preset" data-lat="35.6762" data-lon="139.6503">Tokyo</button>
+                    <button class="btn btn-preset" data-lat="-33.8688" data-lon="151.2093">Sydney</button>
+                </div>
+                
+                <form id="weather-form" class="coords-form">
+                    <div class="input-group">
+                        <label for="latitude">Latitude</label>
+                        <input type="number" id="latitude" step="0.0001" min="-90" max="90" value="28.6139" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="longitude">Longitude</label>
+                        <input type="number" id="longitude" step="0.0001" min="-180" max="180" value="77.2090" required>
+                    </div>
+                    <button type="submit" id="fetch-btn" class="btn btn-primary">
+                        <span class="btn-text">Get Weather</span>
+                        <div class="spinner"></div>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Weather Display Card -->
+            <section class="card display-card">
+                <div id="weather-placeholder" class="weather-placeholder">
+                    <span class="placeholder-icon">📡</span>
+                    <p>Enter coordinates or select a preset to retrieve weather data.</p>
+                </div>
+                
+                <div id="weather-result" class="weather-result hidden">
+                    <div class="weather-main">
+                        <div class="weather-condition">
+                            <span id="weather-emoji" class="condition-emoji">☀️</span>
+                            <span id="weather-desc" class="condition-text">Clear Sky</span>
+                        </div>
+                        <div class="temp-display">
+                            <span id="weather-temp">--</span><span class="temp-unit">°C</span>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">🕒 Measurement Time</span>
+                            <span id="weather-time" class="detail-value">--</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">💨 Wind Speed</span>
+                            <span id="weather-windspeed" class="detail-value">--</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">🧭 Wind Direction</span>
+                            <span id="weather-winddirection" class="detail-value">--</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">🔢 Weather Code</span>
+                            <span id="weather-code" class="detail-value">--</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="app-footer">
+            <p>Powered by Open-Meteo & Embedded Java HttpServer</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

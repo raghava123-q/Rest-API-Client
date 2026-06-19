@@ -1,0 +1,20 @@
+# Compiled class files
+bin/
+*.class
+
+# Maven target directory
+target/
+
+# Log files
+*.log
+
+# Project-specific local files
+lib/
+
+# IDE configurations
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
